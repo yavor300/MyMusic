@@ -1,0 +1,23 @@
+<th:block xmlns:th="http://www.thymeleaf.org">
+    <nav class="navbar navbar-expand-lg bg-nav rounded">
+        <a class="nav-link" href="/">
+            <img src="/img/headphones.png" width="40px" alt="HeadPhones picture">
+        </a>
+        <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
+            <ul class="navbar-nav row">
+                <li th:if="${session.user == null}" class="nav-item col-md-4">
+                    <a class="nav-link text-white active h5" href="/users/login">Login</a>
+                </li>
+                <li th:if="${session.user == null}" class="nav-item col-md-4">
+                    <a class="nav-link text-white active h5" href="/users/register">Register</a>
+                </li>
+                <li th:if="${session.user != null}" class="nav-item col-md-4">
+                    <a class="nav-link text-white active h5" href="/albums/add">Add Album</a>
+                </li>
+                <li th:if="${session.user != null}" class="nav-item col-md-4">
+                    <a class="nav-link text-white active h5" href="/users/logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</th:block>
